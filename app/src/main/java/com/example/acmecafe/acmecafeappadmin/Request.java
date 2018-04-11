@@ -7,6 +7,7 @@ package com.example.acmecafe.acmecafeappadmin;
 public class Request {
     public String id;
 
+
     public Request(String id) {
         this.id = id;
     }

@@ -112,6 +112,8 @@ public class SelectedRequestActivity extends AppCompatActivity {
                 final FirebaseDatabase database = FirebaseDatabase.getInstance();
                 final DatabaseReference reference = database.getReference("Request").child(id).child("Estado Pedido");
                 reference.setValue(true);
+                Intent intent = new Intent(SelectedRequestActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
 
