@@ -35,7 +35,7 @@ public class list_of_requests extends AppCompatActivity {
 
     public void GetRequests() {
 
-        final ArrayList<Request> requests = new ArrayList<>();
+        //final ArrayList<Request> requests = new ArrayList<>();
 
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -55,12 +55,15 @@ public class list_of_requests extends AppCompatActivity {
                     DatabaseReference estado = database.getReference("Requests").child(request.child("Estado Pedido").getValue().toString());
 
                     if(estado.toString().equals("https://acme-cafe-app.firebaseio.com/Requests/false")) {
+                        System.out.println("request--->" + request.toString());
                     Request w = new Request(request.getKey());
+                        System.out.println("id_request: " + request.getKey());
+                        System.out.println("w------> "+ w);
                     requests.add(w);
                     }
                 }
-                showRequests(requests);
 
+                showRequests(requests);
             }
 
             @Override
